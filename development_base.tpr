@@ -1,16 +1,16 @@
 [project]
 version=1
-platform=TPP2W(G2)
-src_lib_ver=2_01_00
+platform=TPP2W
+src_lib_ver=2_01_01
 name=development_base
 output=development_base.tpc
 debug=on
-defines= /dUSE_DNS=1 /dLCD_TYPE=SOLOMON_SSD1963_FIXED_IO2 /dUSE_SNTP=1 /dSUPPORT_HTML=0 /dOBJECT_LCD=LCD_ENABLED /dOBJECT_FD=FD_ENABLED /dNET_AVAILABLE=1 /dSUPPORTS_TABLE=1 /dSUPPORTS_DS=1 /dSUPPORTS_DISPLAY=1 /dOBJECT_KP=KP_ENABLED /dSUPPORTS_AGG=0 /dOBJECT_WLN=WLN_ENABLED
+defines=/dLCD_TYPE=SOLOMON_SSD1963_FIXED_IO2 /dOBJECT_LCD=LCD_ENABLED /dOBJECT_FD=FD_ENABLED /dOBJECT_KP=KP_ENABLED /dOBJECT_WLN=WLN_ENABLED /dUSE_DNS=0 /dUSE_SNTP=0 /dSUPPORT_HTML=0 /dNET_AVAILABLE=1 /dSUPPORTS_TABLE=0 /dSUPPORTS_DS=1 /dSUPPORTS_DISPLAY=0 /dSUPPORTS_AGG=1
 transport=udp_broadcast
 [address1]
 platform=EM1206W
 transport=udp_broadcast
-address=0.36.119.80.169.68
+address=0.36.119.80.91.192
 [address2]
 platform=EM1206W
 transport=udp_winpcap
@@ -30,7 +30,7 @@ address=0.36.119.80.191.174
 [address6]
 platform=TPP2W
 transport=udp_broadcast
-address=0.36.119.81.171.119
+address=0.36.119.80.169.68
 [address7]
 platform=TPP3W
 transport=udp_broadcast
@@ -50,7 +50,7 @@ address=0.36.119.82.70.9
 [address11]
 platform=TPP2W(G2)
 transport=udp_broadcast
-address=0.36.119.82.70.9
+address=0.36.119.80.91.192
 [file1]
 path=main.tbs
 type=basic
@@ -603,16 +603,16 @@ condition=SUPPORTS_TABLE
 locked=no
 location=project
 [file78]
-path=agg.xtxt
-type=xtext
-format=AGG_lib_configurator
-condition=SUPPORTS_AGG
-locked=no
-location=project
-[file79]
 path=settings.xtxt
 type=text
 format=
 condition=
+locked=no
+location=project
+[file79]
+path=agg.xtxt
+type=text
+format=
+condition=SUPPORTS_AGG
 locked=no
 location=project

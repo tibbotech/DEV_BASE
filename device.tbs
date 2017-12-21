@@ -1170,9 +1170,11 @@ end sub
 
 '------------------------------------------------------------------------------
 sub callback_dhcp_buff_released()
+#if SUPPORT_HTML
 	if http_buff_rq(HTTP_BUFF_ALLOCATE)<>OK then
 		'insufficient memory
 	end if
+#endif
 end sub
 
 '------------------------------------------------------------------------------

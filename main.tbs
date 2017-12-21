@@ -497,7 +497,10 @@ initialize:		'OK, initialize now!
 		end if
 		doevents 
 	wend
+#if SUPPORTS_DISPLAY
+
 	entering_menu()
+#endif
 end sub
 #endif
 
