@@ -294,6 +294,27 @@ sub callback_agg_firmware_upload_progress(total_size as dword, remain_size as dw
 	
 end sub
 
+	#if AGG_SERIAL_INTERFACE
+		function callback_agg_ser_connect(byref target_ip as string, target_port as word) as ok_ng
+			callback_agg_ser_connect=OK
+		end function
+		
+		function callback_agg_ser_data_arrival() as no_yes
+			callback_agg_ser_data_arrival=NO
+		end function
+		
+		sub callback_agg_ser_disconnect()
+		
+		end sub
+		
+		function callback_agg_ser_getdata(l as byte) as string
+			callback_agg_ser_getdata=""
+		end function
+		
+		function callback_agg_ser_senddata(byref s as string) as ok_ng
+		
+		end function
+	#endif
 #endif
 
 '------------------------------------------------------------------------------
@@ -992,7 +1013,7 @@ sub callback_gprs_ok()
 	#endif
 
 	#if WLN_AVAILABLE 
-		if interface_ready(PL_SOCK_INTERFACE_WLN)=YES
+		if interface_ready(PL_SOCK_INTERFACE_WLN)=YES then
 			exit sub
 		end if
 	#endif
